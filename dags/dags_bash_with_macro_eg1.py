@@ -19,7 +19,7 @@ with DAG(
             ## 그때 기준으로 data_interval_start는 바로 직전 배치가 돌아갔던 날짜이므로 전월 말일 날짜가 들어감
             ## 기본적으로 airflow 날짜는 utc 기준이므로 한국 기준으로 돌리기 위해서 in_timezone 필요
             ## ` | ds`를 사용해서 yyyymmdd 형식으로 출력
-            "START_DATE": '{{data_interval_start.in_timezone("Asia/Seoul) | ds}}',
+            "START_DATE": '{{data_interval_start.in_timezone("Asia/Seoul") | ds}}',
             ## macro를 사용해서 파이썬 dateutil함수 사용
             ## macro는 template 내에서 파이썬 date관련 함수를 사용할 수 있도록 함
             ## ` | ds`를 사용해서 yyyymmdd 형식으로 출력
