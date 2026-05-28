@@ -33,5 +33,5 @@ with DAG(
         print("data_interval_end: " + str(kwargs["data_interval_end"]))
         print("task_instance: " + str(kwargs["ti"]))
 
-  # task decorator를 사용할때는 해당 함수를 실행시키기만 해도 task가 동작ㄹ
-  python_t1 >> python_function2()
+    # task decorator를 사용할때는 해당 함수를 실행시키기만 해도 task가 동작ㄹ
+    python_t1 >> python_function2()
