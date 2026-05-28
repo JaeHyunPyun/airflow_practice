@@ -25,4 +25,5 @@ with DAG(
             ## ` | ds`를 사용해서 yyyymmdd 형식으로 출력
             "END_DATE": '{{ (data_interval_end.in_timezone("Asia/Seoul") - macros.dateutil.relativedelta.relativedelta(days=1)) | ds}}',
         },
+        bash_command='echo "START_DATE: $START_DATE" && echo "END_DATE: $END_DATE"',
     )
