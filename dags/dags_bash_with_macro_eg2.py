@@ -17,8 +17,8 @@ with DAG(
             ## 2주전 토요일/월요일은 배치가 돌아가는 날짜 기준으로 며칠 이전으로 돌아가면 되는지 계산하면 됨
             ## 예를들어 배치 돌아가는 날짜가 2026/5/28(목) 이면
             ## 2주전 토요일은 12일전, 2주전 월요일은 17일전
-            "START_DATE": '{{(date_interval_end.in_timezone("Asia/Seoul") - macros.dateutil.relativedelta.relativedelta(days=17)) | ds}}',
-            "END_DATE": '{{(date_interval_end.in_timezone("Asia/Seoul") - macros.dateutil.relativedelta.relativedelta(days=12)) | ds}}',
+            "START_DATE": '{{(data_interval_end.in_timezone("Asia/Seoul") - macros.dateutil.relativedelta.relativedelta(days=17)) | ds}}',
+            "END_DATE": '{{(data_interval_end.in_timezone("Asia/Seoul") - macros.dateutil.relativedelta.relativedelta(days=12)) | ds}}',
         },
         bash_command='echo "START_DATE: $START_DATE" && echo "END_DATE: $END_DATE"',
     )
